@@ -1,0 +1,30 @@
+input EngineInput{
+    id: ID,
+    name: String
+}
+
+type Engine {
+    id: ID,
+    name: String
+}
+
+type Vehicle {
+    id: ID!,
+    type: String,
+    modelCode: String,
+    brandName: String,
+    launchDate: String,
+    engine: Engine
+}
+
+type Query {
+    vehicles(count: Int):[Vehicle]
+    vehicle(id: ID!):Vehicle
+}
+
+type Mutation {
+    createVehicle(type: String!, modelCode: String!, brandName: String, launchDate: String):Vehicle
+    updateVehicle(id: ID!, type: String, modelCode: String, brandName: String, launchDate: String, engine: EngineInput):Vehicle
+    deleteVehicle(id: ID!): Boolean
+
+}
