@@ -1,6 +1,5 @@
 package kz.infin.it.springgraphql.domain;
 
-import graphql.schema.GraphQLInputType;
 import lombok.Data;
 
 import javax.persistence.*;
